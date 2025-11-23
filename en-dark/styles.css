@@ -1,0 +1,10 @@
+
+body {
+  margin:0;
+  font-family: sans-serif;
+  background: url('bg.png') center/cover no-repeat fixed;
+  color:#e0eaff;
+  background-color:#001122;
+}
+.container{padding:40px;}
+h1{color:#aaccff;}

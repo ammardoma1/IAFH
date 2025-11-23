@@ -1,0 +1,231 @@
+
+:root {
+  --bg-start: #f4f7ff;
+  --bg-end: #dfe9ff;
+  --card-bg: rgba(255,255,255,0.9);
+  --text-main: #102a43;
+  --text-muted: #5a7184;
+  --accent: #007cf0;
+  --accent-soft: rgba(0,124,240,0.12);
+  --nav-bg: rgba(255,255,255,0.85);
+  --nav-border: rgba(15,50,90,0.08);
+  --chip-bg: rgba(255,255,255,0.6);
+  --chip-border: rgba(150,170,200,0.6);
+  --footer-bg: rgba(10,40,80,0.9);
+}
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--text-main);
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* full-screen blurred logo background */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(circle at top left, rgba(0,124,240,0.35), transparent 55%),
+    radial-gradient(circle at bottom right, rgba(0,180,255,0.45), transparent 55%),
+    url("assets/logo-bg.png") center/70vmin no-repeat;
+  filter: blur(6px);
+  opacity: 0.35;
+  z-index: -2;
+}
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(135deg, var(--bg-start), var(--bg-end));
+  mix-blend-mode: screen;
+  opacity: 0.9;
+  z-index: -3;
+}
+
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(18px);
+  background: var(--nav-bg);
+  border-bottom: 1px solid var(--nav-border);
+}
+
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.6rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* remove small corner logo - brand is text only */
+.brand-icon {
+  display: none;
+}
+
+.brand-title {
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  font-size: 1.05rem;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-size: 0.9rem;
+  padding: 0.45rem 0.85rem;
+  border-radius: 999px;
+  color: var(--text-muted);
+  transition: 0.18s ease;
+}
+
+.nav-links a.active {
+  background: linear-gradient(135deg, #007cf0, #00b3ff);
+  color: #fff;
+  box-shadow: 0 8px 18px rgba(0, 124, 240, 0.45);
+}
+
+.nav-links a:hover {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.lang-toggle {
+  margin-inline-start: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.lang-toggle a {
+  font-size: 0.8rem;
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  border: 1px solid rgba(140,160,190,0.7);
+  text-decoration: none;
+  color: var(--text-muted);
+}
+
+/* main layout */
+.main {
+  flex: 1;
+  padding: 2.5rem 1.25rem 3.5rem;
+}
+.page {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.page-header {
+  text-align: center;
+  margin-bottom: 1.75rem;
+}
+.page-kicker {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--accent);
+  margin-bottom: 0.4rem;
+}
+.page-title {
+  font-size: clamp(1.8rem, 3vw, 2.3rem);
+  margin: 0;
+}
+.page-subtitle {
+  margin-top: 0.3rem;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+.card {
+  background: var(--card-bg);
+  border-radius: 22px;
+  padding: 1.6rem 1.8rem;
+  box-shadow:
+    0 18px 45px rgba(15,50,90,0.15),
+    0 0 0 1px rgba(255,255,255,0.4);
+  margin-bottom: 1.5rem;
+}
+
+.card h2 {
+  margin-top: 0;
+  font-size: 1.1rem;
+}
+.card h3 {
+  font-size: 1rem;
+  margin-top: 1.2rem;
+}
+.card p, .card li {
+  font-size: 0.92rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+}
+.card ul {
+  padding-left: 1.15rem;
+}
+
+/* footer */
+.footer {
+  background: var(--footer-bg);
+  color: rgba(255,255,255,0.8);
+  font-size: 0.8rem;
+  padding: 0.9rem 1.25rem;
+  text-align: center;
+}
+
+/* responsive */
+@media (max-width: 720px) {
+  .nav-inner {
+    flex-wrap: wrap;
+  }
+  .nav-links {
+    width: 100%;
+    justify-content: center;
+  }
+  .lang-toggle {
+    order: -1;
+    width: 100%;
+    justify-content: flex-end;
+  }
+  .card {
+    padding: 1.2rem 1.1rem;
+  }
+}
+
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-inline-start: 0.75rem;
+}
+.theme-toggle a {
+  font-size: 0.8rem;
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  border: 1px solid rgba(140,160,190,0.7);
+  text-decoration: none;
+  color: var(--text-muted);
+}
