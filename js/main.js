@@ -13,7 +13,7 @@
   });
   const q=new URLSearchParams(location.search);
   let lang=q.get('lang')||localStorage.getItem('lang')||'ar';
-  function apply(l){document.documentElement.dir=(l==='ar'?'rtl':'ltr');
+  function apply(l){document.documentElement.dir=(l==='ar'?'rtl':'ltr');document.documentElement.setAttribute('data-lang',l);document.documentElement.lang=l;
     document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.getAttribute('data-i18n'); const dict=window.I18N&&window.I18N[k]; if(dict&&dict[l]) el.innerHTML=dict[l];});
     document.querySelectorAll('.lang-switch button').forEach(btn=>btn.classList.toggle('active',btn.dataset.lang===l));
     localStorage.setItem('lang',l);

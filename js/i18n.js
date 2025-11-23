@@ -18,6 +18,7 @@ window.I18N={
   admin_body:{en:"Administrative services include Quality & Patient Safety, Data & Information Management, HR, Finance, Supply Chain, Facilities & Safety, and Support Services.",ar:"تشمل الخدمات الإدارية الجودة وسلامة المرضى وإدارة البيانات والمعلومات والموارد البشرية والمالية وسلسلة الإمداد والمرافق والسلامة والخدمات المساندة."},
   strategic_title:{en:"Strategic Plan 2025–2030",ar:"الخطة الاستراتيجية 2025–2030"},
   strategic_intro:{en:"Below are the official strategic documents. Click a card to open the viewer. You can switch pages, zoom, or download.",ar:"فيما يلي الوثائق الاستراتيجية الرسمية. اضغط على البطاقة لفتح العارض ويمكنك التنقل بين الصفحات أو التكبير أو التحميل."},
+  home_gallery_title:{en:"Our Hospital",ar:"صور المستشفى"},
   activities_title:{en:"Activities",ar:"الأنشطة"},
   contact_title:{en:"Contact Us",ar:"تواصل معنا"},
   contact_body:{en:"Location: Southern Riyadh, Kingdom of Saudi Arabia. For inquiries and appointments, please use the 937 Call Center or official MOH channels.",ar:"الموقع: جنوب مدينة الرياض، المملكة العربية السعودية. للاستفسارات وحجز المواعيد يرجى استخدام مركز الاتصال 937 أو قنوات وزارة الصحة الرسمية."},
